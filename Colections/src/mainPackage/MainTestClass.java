@@ -19,7 +19,7 @@ public class MainTestClass {
 		System.out.println(staff);
 		Collections.sort(staff, compar);
 		System.out.println(staff);
-
+//test czy dziala
 	}
 
 }
