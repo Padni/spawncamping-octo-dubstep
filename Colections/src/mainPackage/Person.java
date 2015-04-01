@@ -1,10 +1,20 @@
 package mainPackage;
 
+/*
+ * Klasa Person 
+ * Odzwierciedla poejdyncza osobe wraz z jej danymi
+ * @author Dariusz Brzostek
+ * @version 0.0.1
+ * @param name Imie osoby String
+ * @param surname Nazwisko osoby String
+ * @param age wiek wyrazony liczba naturalna 
+ */
+
 public class Person {
 	
 	private String name;
-	private String Surname;
-	private int Age;
+	private String surname;
+	private int age;
 	/**
 	 * @param name
 	 * @param surname
@@ -13,8 +23,8 @@ public class Person {
 	public Person(String name, String surname, int age) {
 		super();
 		this.name = name;
-		Surname = surname;
-		Age = age;
+		this.surname = surname;
+		this.age = age;
 	}
 	/**
 	 * @return the name
@@ -32,32 +42,32 @@ public class Person {
 	 * @return the surname
 	 */
 	public String getSurname() {
-		return Surname;
+		return surname;
 	}
 	/**
 	 * @param surname the surname to set
 	 */
 	public void setSurname(String surname) {
-		Surname = surname;
+		this.surname = surname;
 	}
 	/**
 	 * @return the age
 	 */
 	public int getAge() {
-		return Age;
+		return age;
 	}
 	/**
 	 * @param age the age to set
 	 */
 	public void setAge(int age) {
-		Age = age;
+		this.age = age;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", Surname=" + Surname + ", Age=" + Age
+		return "Person [name=" + name + ", Surname=" + surname + ", Age=" + age
 				+ "]";
 	}
 	/* (non-Javadoc)
@@ -67,8 +77,8 @@ public class Person {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Age;
-		result = prime * result + ((Surname == null) ? 0 : Surname.hashCode());
+		result = prime * result + age;
+		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -84,12 +94,12 @@ public class Person {
 		if (getClass() != obj.getClass())
 			return false;
 		Person other = (Person) obj;
-		if (Age != other.Age)
+		if (age != other.age)
 			return false;
-		if (Surname == null) {
-			if (other.Surname != null)
+		if (surname == null) {
+			if (other.surname != null)
 				return false;
-		} else if (!Surname.equals(other.Surname))
+		} else if (!surname.equals(other.surname))
 			return false;
 		if (name == null) {
 			if (other.name != null)

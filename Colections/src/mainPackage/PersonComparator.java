@@ -5,40 +5,40 @@ import java.util.Comparator;
 public class PersonComparator implements Comparator<Person> {
 
 	@Override
-	public int compare(Person arg0, Person arg1) {
-
-		if (PersonStringsLenght(arg0, arg1) > 0) {
-			return 1;
-		} else if (PersonStringsLenght(arg0, arg1) < 0) {
-			return -1;
+	public int compare(Person firstPerson, Person seconPerson) {
+		if (personStringLenghtDiferent(firstPerson, seconPerson) == 0) {
+			return personStringCompare(firstPerson, seconPerson);
 		} else {
-			return PersonStringCompare(arg0, arg1);
+			return personStringLenghtDiferent(firstPerson, seconPerson);
 		}
 
 	}
 
-	private int PersonStringsLenght(Person arg0, Person arg1) {
-		int tempArg0 = arg0.getName().length() + arg0.getSurname().length();
-		int tempArg1 = arg1.getName().length() + arg0.getSurname().length();
+	/*
+	 * Metoda porównuje sumy d³ugoœci imion nazwisk dwóch osób i zwraca ich ró¿nice
+	 * @param firstPerson Pierwsza osoba odjemna
+	 * @param secondPerson druga osoba odjemik
+	 * @return zwaraca róznice sumy d³ugoœci imion i nazwisk 
+	 * @see Person
+	 */
+	private int personStringLenghtDiferent(Person firstPerson, Person secondPerson) {
+		int tempArg0 = firstPerson.getName().length() + firstPerson.getSurname().length();
+		int tempArg1 = secondPerson.getName().length() + firstPerson.getSurname().length();
 
 		return tempArg0 - tempArg1;
 	}
 
-	private int PersonStringCompare(Person arg0, Person arg1) {
-		if (arg0.getSurname().compareTo(arg1.getSurname()) > 0) {
-			return 1;
-		} else if (arg0.getSurname().compareTo(arg1.getSurname()) < 0) {
-			return -1;
-		} else {
-			if (arg0.getName().compareTo(arg1.getName()) > 0) {
-				return 1;
-			} else if (arg0.getName().compareTo(arg1.getName()) < 0) {
-				return -1;
-			} else {
-				return 0;
-			}
-
-		}
+	/*
+	 * Metoda porównuje najpierw nazwiska osób leksykograficznie
+	 * jezeli sa rózne zwaraca 1,-1 w zate¿nosci które jest piewsze w kolejnoœci
+	 * jezeli sa takie same portównuje imiona i zrwraca wartoœc analogicznie do porównywania nazwisk
+	 */
+	
+	private int personStringCompare(Person firstPerson, Person secondPerson) {
+		if (firstPerson.getSurname().compareTo(secondPerson.getSurname()) == 0) { //Porównanie nazwisk
+			return firstPerson.getName().compareTo(secondPerson.getName());
+		} else
+			return firstPerson.getSurname().compareTo(secondPerson.getSurname());  //porównanie imion 
 	}
 
 }
