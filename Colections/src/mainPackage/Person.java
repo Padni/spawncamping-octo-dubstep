@@ -5,9 +5,6 @@ package mainPackage;
  * Odzwierciedla poejdyncza osobe wraz z jej danymi
  * @author Dariusz Brzostek
  * @version 0.0.1
- * @param name Imie osoby String
- * @param surname Nazwisko osoby String
- * @param age wiek wyrazony liczba naturalna 
  */
 
 public class Person {
