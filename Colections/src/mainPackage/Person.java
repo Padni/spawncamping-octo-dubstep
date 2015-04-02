@@ -4,7 +4,7 @@ package mainPackage;
  * Klasa Person 
  * Odzwierciedla poejdyncza osobe wraz z jej danymi
  * @author Dariusz Brzostek
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 public class Person {
@@ -22,6 +22,9 @@ public class Person {
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
+	}
+	public Person() {
+		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * @return the name
